@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  text-align: center;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+.calculator {
+  width: calc(100% - 30px);
+  max-width: 350px;
+  height: auto;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px solid #d4af37;
+  border-radius: 20px;
+  gap: 20px;
+}
+button {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  font-size: 18px;
+  border: none;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+
+  width: 100%;
+  margin: 10px;
+  gap: 8px;
+}
+
+input {
+  width: 250px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #555;
+  background-color: #1a1a1a;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+button:hover {
+  background-color: #ffcc00;
+  color: black;
+  transform: scale(1.1);
+}
+.clear {
+  background-color: #ff3b30;
+}
+.clear:hover {
+  background-color: #ff5e52;
+  color: white;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.field label {
+  text-align: left;
+}
+input:focus {
+  border-color: #d4af37;
+  outline: none;
+  box-shadow: 0 0 8px #d4af37;
+}
