@@ -8,46 +8,59 @@ const divide = document.getElementById("divide");
 const clear = document.getElementById("clear");
 const result = document.getElementById("result");
 
+//  Declaring a function to check if either input is empty.
+function hasEmptyInput() {
+  return firstNumber.value === "" || secondNumber.value === "";
+}
+
+// Declaring a function to get the number from an input box.
+function getNumber(input) {
+  return Number(input.value);
+}
+
 // adding function to add button.
 add.addEventListener("click", function () {
-  const a = Number(firstNumber.value);
-  const b = Number(secondNumber.value);
-  if (firstNumber.value === "" || secondNumber.value === "") {
+  const a = getNumber(firstNumber);
+  const b = getNumber(secondNumber);
+
+  // Calling hasEmptyInput() to check if any input is empty
+  if (hasEmptyInput()) {
     result.textContent = "Please enter both numbers.";
-  } 
-  else {
+  } else {
     result.textContent = a + b;
   }
 });
 // adding function to subtract button.
 subtract.addEventListener("click", function () {
-  const a = Number(firstNumber.value);
-  const b = Number(secondNumber.value);
-  if (firstNumber.value === "" || secondNumber.value === ""){
+  const a = getNumber(firstNumber);
+  const b = getNumber(secondNumber);
+
+  // Calling again hasEmptyInput() to check if any input is empty
+  if (hasEmptyInput()) {
     result.textContent = "Please enter both numbers.";
-  }
-  else {
+  } else {
     result.textContent = a - b;
   }
 });
 // adding function to multiply button.
 multiply.addEventListener("click", function () {
-  const a = Number(firstNumber.value);
-  const b = Number(secondNumber.value);
-  if (firstNumber.value === "" || secondNumber.value === ""){
+  const a = getNumber(firstNumber);
+  const b = getNumber(secondNumber);
+
+  // Calling again hasEmptyInput() to check if any input is empty
+  if (hasEmptyInput()) {
     result.textContent = "Please enter both numbers.";
-  }
-  else {
+  } else {
     result.textContent = a * b;
   }
 });
 // adding function to divide button.
 divide.addEventListener("click", function () {
-  const a = Number(firstNumber.value);
-  const b = Number(secondNumber.value);
+  const a = getNumber(firstNumber);
+  const b = getNumber(secondNumber);
 
-  // Checking if both inputs have values.
-  if (firstNumber.value === "" || secondNumber.value === "") {
+  // Calling again hasEmptyInput() to check if any input is empty
+  if (hasEmptyInput()) {
     result.textContent = "Please enter both numbers.";
   }
   // Checking for division by zero.
